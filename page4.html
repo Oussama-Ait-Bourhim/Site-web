@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Album de Dessins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(255, 251, 192);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; padding: 150px;">My Drawings🖌</h1>
+
+    <div class="gallery">
+        <img src="IMAG1.jpg" alt="Dessin 1" onclick="openModal(this)">
+        <img src="IMAG2.jpg" alt="Dessin 2" onclick="openModal(this)">
+        <img src="IMAG3.jpg" alt="Dessin 3" onclick="openModal(this)">
+        <img src="IMAG4.jpg" alt="Dessin 4" onclick="openModal(this)">
+        <img src="IMAG5.jpg" alt="Dessin 5" onclick="openModal(this)">
+        <img src="IMAG6.jpg" alt="Dessin 6" onclick="openModal(this)">
+        <img src="IMAG7.jpg" alt="Dessin 7" onclick="openModal(this)">
+        <img src="IMAG8.jpg" alt="Dessin 8" onclick="openModal(this)">
+        
+    </div>
+
+    <!-- Modale pour afficher l'image en grand -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Image agrandie">
+    </div>
+
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+        <div class="button-container">
+    <a href="page4.html" class="next-button">Next</a>
+</div>
+
+    </script>
+
+</body>
+</html>
+
